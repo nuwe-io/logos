@@ -1,0 +1,115 @@
+
+# Project information
+site_name: NUWE logos API
+site_url: https://example.com
+site_author: Edgar Gago Carrillo
+site_description: >-
+  API de logos sobre tecnológias del sector software
+
+# Copyright
+copyright: Copyright &copy; 2021 nuwe.io
+
+# Page tree
+# Page tree
+nav:
+  - README:
+    - Home: index.md
+    - About: about.md
+    - Code of conduct: conduct.md
+    - Cotribute: contribute.md
+    - License: license.md
+  - src: 
+    - Home: src/index.md
+
+
+# Repository
+repo_name: nuwe-io/logos
+repo_url: https://github.com/nuwe-io/logos
+edit_uri: ""
+
+# Theme
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: img/favicon.ico
+  homepage: https://github.com/username/repo
+  features:
+    - navigation.top
+  palette:
+    - scheme: slate 
+      primary: green
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to ligth mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.details
+
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+  
+# Plugins
+plugins:
+  - search
+  - git-revision-date
+
+# Customization
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your_profile
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/your_profile
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/your_profile
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/your_profile/
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/your_profile
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:your_email@gmail.com

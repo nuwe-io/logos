@@ -19,12 +19,13 @@ const s3 = new S3({
  * @returns {Promise}
  */
 exports.uploadFile = (file) => {
-  const fileStream = fs.createReadStream(file.path)
+  const fileContent = fs.readFileSync(file.path)
 
   const uploadParams = {
     Bucket: bucketName,
-    Body: fileStream,
-    Key: file.filename
+    Body: fileContent,
+    Key: file.originalname
+    //ContentType: file.mimetype
   }
 
   return s3.upload(uploadParams).promise()

@@ -30,6 +30,6 @@ exports.close = () => mongoose.disconnect()
 
 // Loading the mongo db uri to a constat for easier access
 mongoose
-  .connect(connectionString, {})
+  .connect(connectionString, { useNewUrlParser: true })
   .then(() => console.log('Connection stabilished successfully'))
   .catch((err) => console.log(err))

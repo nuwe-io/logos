@@ -1,33 +1,22 @@
-
-# Project information
 site_name: NUWE logos API
 site_url: https://example.com
 site_author: Edgar Gago Carrillo
-site_description: >-
-  API de logos sobre tecnológias del sector software
-
-# Copyright
+site_description: API de logos sobre tecnológias del sector software
 copyright: Copyright &copy; 2021 nuwe.io
-
-# Page tree
-# Page tree
 nav:
   - README:
-    - Home: index.md
-    - About: about.md
-    - Code of conduct: conduct.md
-    - Cotribute: contribute.md
-    - License: license.md
-  - src: 
-    - Home: src/index.md
-
-
-# Repository
+      - Home: index.md
+      - About: about.md
+      - Code of conduct: conduct.md
+      - Cotribute: contribute.md
+      - License: license.md
+  - src:
+      - Logo: src/logo.md
+      - Routes: src/routes.md
+      - Shared: src/shared.md
 repo_name: nuwe-io/logos
 repo_url: https://github.com/nuwe-io/logos
 edit_uri: ""
-
-# Theme
 theme:
   name: material
   logo: assets/logo.png
@@ -36,7 +25,7 @@ theme:
   features:
     - navigation.top
   palette:
-    - scheme: slate 
+    - scheme: slate
       primary: green
       accent: deep purple
       toggle:
@@ -51,8 +40,6 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-
-# Extensions
 markdown_extensions:
   - admonition
   - abbr
@@ -83,23 +70,17 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.details
-
 extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-  
-# Plugins
 plugins:
   - search
   - git-revision-date
-
-# Customization
 extra:
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
+    property: GOOGLE_ANALYTICS_KEY
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/your_profile

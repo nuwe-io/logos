@@ -4,16 +4,23 @@ const compress = require('compression')
 const methodOverride = require('method-override')
 const cors = require('cors')
 const helmet = require('helmet')
-const routes = require('../routes')
+const passport = require('passport')
+const routes = require('../api/routes')
 const { logs } = require('./vars')
-const error = require('../shared/middlewares/error')
-const expressJSDocSwagger = require('express-jsdoc-swagger')
+const error = require('../api/shared/middlewares/error')
+const strategies = require('./passport')
+const mongoose = require('./mongo')
+// Open mongoose connection
+mongoose.connect()
 
 /**
  * Express instanc
  * @public
  */
 const app = express()
+
+// Documentation api
+app.use(express.static('public'))
 
 // request logging. dev: console | production: file
 app.use(morgan(logs))
@@ -35,15 +42,14 @@ app.use(cors())
 app.use(express.json())
 
 // parse urlencoded request body
-
 app.use(express.urlencoded({ extended: true }))
 
-// mount api routes
-app.use(routes)
+// enable authentication
+app.use(passport.initialize())
+passport.use('jwt', strategies.jwt)
 
-// Documentation routes
-const { options } = require('./swaggerConfig')
-expressJSDocSwagger(app)(options)
+// mount api routes
+app.use('/', routes)
 
 // if error is not an instanceOf APIError, convert it.
 app.use(error.converter)

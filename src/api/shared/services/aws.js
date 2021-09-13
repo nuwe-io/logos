@@ -1,6 +1,6 @@
 const S3 = require('aws-sdk/clients/s3')
 const fs = require('fs')
-const { aws } = require('../../config/vars')
+const { aws } = require('../../../config/vars')
 
 const bucketName = aws.bucket
 const region = aws.region
@@ -24,12 +24,13 @@ exports.uploadFile = (file) => {
   const uploadParams = {
     Bucket: bucketName,
     Body: fileContent,
-    Key: file.originalname
+    Key: file.originalName
     //ContentType: file.mimetype
   }
 
   return s3.upload(uploadParams).promise()
 }
+
 
 /**
  * Returns the image/svg data from amazon

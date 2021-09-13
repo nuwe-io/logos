@@ -2,8 +2,6 @@
 
 API que contiene una lista de diferentes tecnologías del sector sofware.
 
-Revisar: https://github.com/danielfsousa/express-rest-boilerplate
-
 ## Install
 
 ```shell
@@ -21,7 +19,17 @@ git clone https://github.com/nuwe-io/logos
 Para utilizar la API: 
 
 ```javascript
-import {fetch}
+
+// Para utilizar con axios:
+
+```
+
+### Update de la documentación: 
+
+ejecutar desde el root folder:
+
+```shell
+api doc -i src/ -o public
 ```
 
 ## Contact info 

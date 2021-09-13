@@ -23,12 +23,10 @@ if (env === 'development') {
  */
 exports.connect = () => {
   mongoose
-    .connect(mongo.uri, { useNewUrlParser: true })
+    .connect(mongo.uri, {})
     .then(() => console.log('Connection stabilished successfully'))
     .catch((err) => console.log(err))
 }
-
-exports.connect = () => mongoose.connect(mongo.uri, {})
 
 /**
  * Drop database, close the connection and stop mongod.

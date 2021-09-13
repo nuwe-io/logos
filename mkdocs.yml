@@ -11,9 +11,8 @@ nav:
       - Cotribute: contribute.md
       - License: license.md
   - src:
-      - Logo: src/logo.md
-      - Routes: src/routes.md
-      - Shared: src/shared.md
+      - Api: src/api.md
+      - Config: src/config.md
 repo_name: nuwe-io/logos
 repo_url: https://github.com/nuwe-io/logos
 edit_uri: ""

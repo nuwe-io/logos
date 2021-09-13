@@ -14,3 +14,4 @@ exports.getKeyFromAWS = catchAsync(async (req, res, next) => {
   res.locals.fileKey = result.Key
   next()
 })
+

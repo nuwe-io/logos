@@ -24,8 +24,13 @@ const logoSchema = new Schema(
       type: [String],
       enum: categories
     },
-    score: { type: Number, default: 0 },
-    scoreHistory: [Number],
+    rank: { type: Number, default: 0 },
+    rankHistory: [
+      {
+        value: { type: Number },
+        date: { type: Date }
+      }
+    ],
     fileKey: { type: String, required: true }
   },
   {

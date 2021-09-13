@@ -2,8 +2,6 @@
 
 API que contiene una lista de diferentes tecnologías del sector sofware.
 
-Revisar: https://github.com/danielfsousa/express-rest-boilerplate
-
 ## Install
 
 ```shell

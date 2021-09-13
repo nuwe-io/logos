@@ -1,6 +1,8 @@
 # NUWE LOGOS API
 
-API que contiene una lista de diferentes tecnologías del sector sofware
+API que contiene una lista de diferentes tecnologías del sector sofware.
+
+Revisar: https://github.com/danielfsousa/express-rest-boilerplate
 
 ## Install
 

@@ -24,13 +24,14 @@ const logoSchema = new Schema(
       type: [String],
       enum: categories
     },
-    rank: { type: Number, default: 0 },
+    rank: { type: Number, default: 0 }, // Valor de la skill en el momento en el que se hizo el último update
+    currentRank: { type: Number, default: 0 }, // Valor de la skill actual ( teniendo en cuenta si el usuario participa o no)
     rankHistory: [
       {
         value: { type: Number },
         date: { type: Date }
       }
-    ],
+    ], // Solo modificarlo en IHardSkill (skillsverified)
     fileKey: { type: String, required: true }
   },
   {

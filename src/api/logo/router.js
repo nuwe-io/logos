@@ -4,11 +4,11 @@ const router = express.Router()
 const multer = require('multer')
 const { getKeyFromAWS } = require('../shared/middlewares/fileManager')
 const upload = multer({ dest: 'uploads/' })
-const { add, findAll, findObj, deleteById, updateById, findByFileKey, bulkUpload } = require('./controller')
+const { add, list, get, remove, updateById, findByFileKey, bulkUpload, load } = require('./controller')
 const { authorize, ADMIN } = require('../shared/middlewares/auth')
 
 /**
- * @api {get} /logos/:fileKey
+ * @api {get} /logos/:fileKey Find logo file
  * @apiDescription Returns the requested file using the fileKey(name)
  * @apiName GetLogo
  * @apiGroup Logos
@@ -18,8 +18,8 @@ const { authorize, ADMIN } = require('../shared/middlewares/auth')
 router.get('/:fileKey', findByFileKey)
 
 /**
- * @api {post} /logos
- * @summary Add the database object using the id
+ * @api {post} /logos Add logo
+ * @apiDescription Add the database object using the id
  * @apiName AddLogo
  * @apiGroup Logos
  * @apiPermission admin
@@ -27,8 +27,8 @@ router.get('/:fileKey', findByFileKey)
 router.post('/', authorize(ADMIN), add)
 
 /**
- * @api {post} /logos/withImage
- * @summary Add a new database object + upload the logo image to AWS
+ * @api {post} /logos/withImage Add with image
+ * @apiDescription Add a new database object + upload the logo image to AWS
  * @apiName AddImageLogo
  * @apiGroup Logos
  * @apiPermission admin
@@ -36,54 +36,47 @@ router.post('/', authorize(ADMIN), add)
 router.post('/withImage/', authorize(ADMIN), upload.single('image'), getKeyFromAWS, add)
 
 /**
- * @api {put} /logos/{id}
- * @summary Upadate the database object using the id
+ * @api {patch} /logos/{id} Upadte Logo
+ * @apiDescription Upadate the database object using the id
  * @apiName Upadate
  * @apiGroup Logos
  * @apiPermission admin
  */
 router.patch('/:id', authorize(ADMIN), updateById)
 /**
- * @api {delete} /logos/{id}
- * @summary Deleted the database object using the id
+ * @api {delete} /logos/{id} Delete Logo
+ * @apiDescription Deleted the database object using the id
  * @apiName DeleteLogo
  * @apiGroup Logos
  * @apiPermission admin
  */
-router.delete('/:id', authorize(ADMIN), deleteById)
+router.delete('/:id', authorize(ADMIN), remove)
 
 /**
- * @api {get} /logos/all
- * @summary  Returns all the database objects
+ * @api {get} /logos/all Find all
+ * @apiDescription  Returns all the database objects
  * @apiName GetLogos
  * @apiGroup Logos
  * @apiPermission public
  */
-router.get('/find/all', findAll)
-
-/**
- * GET /find/:id
- * @summary Returns the database object looking by the id
- * @tags Logos
- * @param {string} id.params.required - id
- */
+router.get('/find/all', list)
 
 /**
  * @api {get} /find/:id Find by Id
- * @summary  Returns the database object looking by the id
+ * @apiDescription  Returns the database object looking by the id
  * @apiName GetObjectLogo
  * @apiGroup Logos
  * @apiPermission public
  */
-router.get('/find/:id', findObj)
+router.get('/find/:id', get)
 
 /**
  * @api {get} /logos/bulk Upload bulk logos
- * @summary  Uploads a list of logos and creates the object at mongo
+ * @apiDescription  Uploads a list of logos and creates the object at mongo
  * @apiName BulkUpload
  * @apiGroup Logos
  * @apiPermission admin
  */
-router.post('/bulkUpload', bulkUpload)
+router.post('/bulkUpload', authorize(ADMIN), bulkUpload)
 
 module.exports = router

@@ -16,11 +16,20 @@ git clone https://github.com/nuwe-io/logos
 
 ## Usage
 
+API Documentation: [logos.nuwe.io](https://logos.nuwe.io)
 Para utilizar la API: 
 
 ```javascript
 
 // Para utilizar con axios:
+import axios from "axios"
+
+const baseURL = "https://logos.nuwe.io/"
+const logoFileName = "azure.png"
+
+
+const azureLogo = () => axios.get(baseURL/logoFileName)
+
 
 ```
 
@@ -29,8 +38,14 @@ Para utilizar la API:
 ejecutar desde el root folder:
 
 ```shell
-api doc -i src/ -o public
+apidoc -i src/ -o public/
 ```
+
+
+### Contribute
+
+In progress
+
 
 ## Contact info 
 

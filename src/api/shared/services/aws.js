@@ -31,7 +31,6 @@ exports.uploadFile = (file) => {
   return s3.upload(uploadParams).promise()
 }
 
-
 /**
  * Returns the image/svg data from amazon
  * @param {string} fileKey - fileKey parameter got from amazon
@@ -42,6 +41,5 @@ exports.getFileStream = (fileKey) => {
     Key: fileKey,
     Bucket: bucketName
   }
-
   return s3.getObject(downloadParams).createReadStream()
 }

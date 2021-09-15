@@ -1,5 +1,6 @@
 const httpStatus = require('http-status')
 const { omit } = require('lodash')
+const catchAsync = require('../shared/utils/catchAsync')
 const User = require('./domain')
 
 /**
@@ -82,15 +83,11 @@ exports.update = (req, res, next) => {
  * Get user list
  * @public
  */
-exports.list = async (req, res, next) => {
-  try {
-    const users = await User.list(req.query)
-    const transformedUsers = users.map((user) => user.transform())
-    res.json(transformedUsers)
-  } catch (error) {
-    next(error)
-  }
-}
+exports.list = catchAsync(async (req, res) => {
+  const users = await User.list(req.query)
+  const transformedUsers = users.map((user) => user.transform())
+  res.json(transformedUsers)
+})
 
 /**
  * Delete user

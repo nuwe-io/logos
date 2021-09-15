@@ -35,6 +35,7 @@ exports.findByFileKey = catchAsync(async (req, res) => {
   if (!logo) {
     res.status(404).json({ message: 'We could not find your image' })
   } else {
+    res.header('Content-Type', 'image/svg+xml')
     const readStream = getFileStream(key)
     readStream.pipe(res)
   }

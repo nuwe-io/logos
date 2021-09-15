@@ -343,7 +343,8 @@ define({ "api": [
   {
     "type": "post",
     "url": "/logos/withImage",
-    "title": "",
+    "title": "Add with image",
+    "description": "<p>Add a new database object + upload the logo image to AWS</p>",
     "name": "AddImageLogo",
     "group": "Logos",
     "permission": [
@@ -358,8 +359,25 @@ define({ "api": [
   {
     "type": "post",
     "url": "/logos",
-    "title": "",
+    "title": "Add logo",
+    "description": "<p>Add the database object using the id</p>",
     "name": "AddLogo",
+    "group": "Logos",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "src/api/logo/router.js",
+    "groupTitle": "Logos"
+  },
+  {
+    "type": "get",
+    "url": "/logos/bulk",
+    "title": "Upload bulk logos",
+    "description": "<p>Uploads a list of logos and creates the object at mongo</p>",
+    "name": "BulkUpload",
     "group": "Logos",
     "permission": [
       {
@@ -373,7 +391,8 @@ define({ "api": [
   {
     "type": "delete",
     "url": "/logos/{id}",
-    "title": "",
+    "title": "Delete Logo",
+    "description": "<p>Deleted the database object using the id</p>",
     "name": "DeleteLogo",
     "group": "Logos",
     "permission": [
@@ -387,8 +406,8 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/logos/{fileKey}",
-    "title": "",
+    "url": "/logos/:fileKey",
+    "title": "Find logo file",
     "description": "<p>Returns the requested file using the fileKey(name)</p>",
     "name": "GetLogo",
     "group": "Logos",
@@ -404,7 +423,8 @@ define({ "api": [
   {
     "type": "get",
     "url": "/logos/all",
-    "title": "",
+    "title": "Find all",
+    "description": "<p>Returns all the database objects</p>",
     "name": "GetLogos",
     "group": "Logos",
     "permission": [
@@ -419,7 +439,8 @@ define({ "api": [
   {
     "type": "get",
     "url": "/find/:id",
-    "title": "",
+    "title": "Find by Id",
+    "description": "<p>Returns the database object looking by the id</p>",
     "name": "GetObjectLogo",
     "group": "Logos",
     "permission": [
@@ -432,9 +453,10 @@ define({ "api": [
     "groupTitle": "Logos"
   },
   {
-    "type": "put",
+    "type": "patch",
     "url": "/logos/{id}",
-    "title": "",
+    "title": "Upadte Logo",
+    "description": "<p>Upadate the database object using the id</p>",
     "name": "Upadate",
     "group": "Logos",
     "permission": [
@@ -448,7 +470,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "v1/users",
+    "url": "/users",
     "title": "Create User",
     "description": "<p>Create a new user</p>",
     "version": "1.0.0",
@@ -586,7 +608,7 @@ define({ "api": [
   },
   {
     "type": "patch",
-    "url": "v1/users/:id",
+    "url": "/users/:id",
     "title": "Delete User",
     "description": "<p>Delete a user</p>",
     "version": "1.0.0",
@@ -655,7 +677,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "v1/users/:id",
+    "url": "/users/:id",
     "title": "Get User",
     "description": "<p>Get user information</p>",
     "version": "1.0.0",
@@ -864,7 +886,7 @@ define({ "api": [
   },
   {
     "type": "put",
-    "url": "v1/users/:id",
+    "url": "/users/:id",
     "title": "Replace User",
     "description": "<p>Replace the whole user document with a new one</p>",
     "version": "1.0.0",
@@ -1010,7 +1032,7 @@ define({ "api": [
   },
   {
     "type": "patch",
-    "url": "v1/users/:id",
+    "url": "/users/:id",
     "title": "Update User",
     "description": "<p>Update some fields of a user document</p>",
     "version": "1.0.0",
@@ -1156,7 +1178,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "v1/users/profile",
+    "url": "/users/profile",
     "title": "User Profile",
     "description": "<p>Get logged in user profile information</p>",
     "version": "1.0.0",

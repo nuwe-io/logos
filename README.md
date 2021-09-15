@@ -29,7 +29,7 @@ Para utilizar la API:
 ejecutar desde el root folder:
 
 ```shell
-api doc -i src/ -o public
+apidoc -i src/ -o public/
 ```
 
 ## Contact info 

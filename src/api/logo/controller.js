@@ -1,28 +1,43 @@
-const Logo = require('./model')
+const Logo = require('./domain')
 const catchAsync = require('../shared/utils/catchAsync')
 const logos = require('../../../toUpload.json')
 const { uploadFile, getFileStream } = require('../shared/services/aws')
 const path = require('path')
+const logger = require('../../config/logger')
 
-exports.findAll = catchAsync(async (req, res) => {
-  const data = await Logo.find({})
-  res.status(200).json(data)
+/**
+ * Get logos list
+ * @public
+ */
+exports.list = catchAsync(async (req, res) => {
+  const logos = await Logo.list(req.query)
+  const transformedData = logos.map((logo) => logo.transform())
+  res.status(200).json(transformedData)
 })
 
 /**
- * Finds an object and returns the data associated Using
- * the _id property
- * @param {*}
+ * Get logo
+ * @public
  */
-exports.findObj = catchAsync(async (req, res) => {
-  const data = await Logo.findById(req.params.id)
-  res.status(200).json(data)
+exports.get = catchAsync(async (req, res) => {
+  try {
+    const logo = await Logo.get(req.params.id)
+    console.log(logo)
+    res.json(logo.transform())
+  } catch (err) {
+    console.log(err)
+  }
 })
 
 exports.findByFileKey = catchAsync(async (req, res) => {
   const key = req.params.fileKey
-  const readStream = getFileStream(key)
-  readStream.pipe(res)
+  const logo = await Logo.findOne({ fileKey: key })
+  if (!logo) {
+    res.status(404).json({ message: 'We could not find your image' })
+  } else {
+    const readStream = getFileStream(key)
+    readStream.pipe(res)
+  }
 })
 
 /**
@@ -59,23 +74,33 @@ exports.updateById = catchAsync(async (req, res) => {
 /**
  *  Finds and deletes an object using the standar _id parameter
  * @param {*}
- * @returns
  */
-exports.deleteById = catchAsync(async (req, res) => {
+exports.remove = catchAsync(async (req, res) => {
   await Logo.findOneAndDelete({ _id: req.params.id }, req.body)
   res.status(200).json({ message: 'Model deleted correctly' })
 })
 
+/**
+ * Loads the images in AWS and creates the mongo object
+ * @priavate
+ */
 exports.bulkUpload = catchAsync(async (req, res) => {
-  logos.skills.map(async (logo, index) => {
-    const filePath = path.resolve(__dirname, '../../../img/' + logos.files[index])
+  logos.map(async (logo) => {
+    const filePath = path.resolve(__dirname, '../../../img/' + logo.files[0])
     const file = {
       path: filePath,
-      originalName: logos.files[index]
+      originalName: logo.files[0]
     }
     const fileResp = await uploadFile(file)
-    logo.fileKey = fileResp.key
-    await Logo.create(logo)
+    const logoObj = {
+      name: logo.name,
+      shortname: logo.shortname,
+      url: logo.url,
+      category: logo.category,
+      fileKey: fileResp.key
+    }
+    await Logo.create(logoObj)
+    logger.info(`Logo created: ${logo.name}`)
   })
   res.status(200).json({ message: 'Skills and iamges created correctly' })
 })

@@ -1,20 +1,261 @@
-{
-  "check": "https://github.com/danielfsousa/express-rest-boilerplate",
-  "files": ["nuwe.png", "csharp.png"],
-  "skills": [
-    {
-      "name": "nuwe",
-      "shortname": "nuwe",
-      "url": "https://nuwe.io",
-      "category": "frontend",
-      "fileKey": ""
-    },
-    {
-      "name": "nuwe",
-      "shortname": "nuwe",
-      "url": "https://nuwe.io",
-      "category": "frontend",
-      "fileKey": ""
-    }
-  ]
-}
+[
+  {
+    "name": ".NET",
+    "shortname": "dotnet",
+    "url": "http://www.microsoft.com/net",
+    "files": ["dotnet.svg"],
+    "category": "cross platform"
+  },
+  {
+    "name": "Angular",
+    "shortname": "angular",
+    "url": "https://angular.io/",
+    "files": ["angular.svg"],
+    "category": "frontend"
+  },
+  {
+    "name": "Azure",
+    "shortname": "azure",
+    "url": "https://azure.microsoft.com/",
+    "files": ["azure.svg"],
+    "category": "cloud"
+  },
+  {
+    "name": "C",
+    "shortname": "c",
+    "url": "https://en.wikipedia.org/wiki/C_(programming_language)",
+    "files": ["c.svg"],
+    "category": "systems"
+  },
+  {
+    "name": "C Sharp (C#) ",
+    "shortname": "c-sharp",
+    "url": "http://csharp.net/",
+    "files": ["c-sharp.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "C++",
+    "shortname": "c-plusplus",
+    "url": "https://isocpp.org/",
+    "files": ["c-plusplus.svg"],
+    "category": "gamedev"
+  },
+  {
+    "name": "CSS3",
+    "shortname": "css-3",
+    "url": "http://www.w3.org/TR/CSS/",
+    "files": ["css-3.svg"],
+    "category": "frontend"
+  },
+  {
+    "name": "DigitalOcean",
+    "shortname": "digitalocean",
+    "url": "https://www.digitalocean.com/",
+    "files": ["digital-ocean.svg"],
+    "category": "cloud"
+  },
+  {
+    "name": "Express",
+    "shortname": "express",
+    "url": "http://expressjs.com/",
+    "files": ["express.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Flask",
+    "shortname": "flask",
+    "url": "http://flask.pocoo.org/",
+    "files": ["flask.svg"],
+    "category": "frontend"
+  },
+  {
+    "name": "Flutter",
+    "shortname": "flutter",
+    "url": "https://flutter.dev",
+    "files": ["flutter.svg"],
+    "category": "mobile"
+  },
+  {
+    "name": "Google Cloud",
+    "shortname": "google-cloud",
+    "url": "https://cloud.google.com/",
+    "files": ["google-cloud.svg"],
+    "category": "cloud"
+  },
+  {
+    "name": "GraphQL",
+    "shortname": "graphql",
+    "url": "http://graphql.org/",
+    "files": ["graphql.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "HTML5",
+    "shortname": "html-5",
+    "url": "http://www.w3.org/TR/html5/",
+    "files": ["html-5.svg"],
+    "category": "frontend"
+  },
+  {
+    "name": "Java",
+    "shortname": "java",
+    "url": "https://www.java.com/",
+    "files": ["java.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Jupyter",
+    "shortname": "jupyter",
+    "url": "https://jupyter.org",
+    "files": ["jupyter.svg"],
+    "category": "data science"
+  },
+  {
+    "name": "Keras",
+    "shortname": "keras",
+    "url": "https://numpy.org",
+    "files": ["keras.svg"],
+    "category": "data science"
+  },
+  {
+    "name": "Kotlin",
+    "shortname": "kotlin",
+    "url": "http://kotlinlang.org/",
+    "files": ["kotlin.svg"],
+    "category": "mobile"
+  },
+  {
+    "name": "Laravel",
+    "shortname": "laravel",
+    "url": "http://laravel.com/",
+    "files": ["laravel.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Matplotlib",
+    "shortname": "matplotlib",
+    "url": "https://matplotlib.org",
+    "files": ["matplotlib.svg"],
+    "category": "data science"
+  },
+  {
+    "name": "MongoDB",
+    "shortname": "mongodb",
+    "url": "https://www.mongodb.org/",
+    "files": ["mongodb.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "MySQL",
+    "shortname": "mysql",
+    "url": "http://dev.mysql.com/",
+    "files": ["mysql.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Next.js",
+    "shortname": "nextjs",
+    "url": "https://zeit.co/next",
+    "files": ["nextjs.svg"],
+    "category": "frontend"
+  },
+  {
+    "name": "Node.js",
+    "shortname": "nodejs",
+    "url": "https://nodejs.org/",
+    "files": ["nodejs.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Numpy",
+    "shortname": "numpy",
+    "url": "https://keras.io",
+    "files": ["numpy.svg"],
+    "category": "data science"
+  },
+  {
+    "name": "Oracle",
+    "shortname": "oracle",
+    "url": "https://www.oracle.com/database/",
+    "files": ["oracle.svg"],
+    "category": "cloud"
+  },
+  {
+    "name": "PHP",
+    "shortname": "php",
+    "url": "http://php.net/",
+    "files": ["php.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Pandas",
+    "shortname": "pandas",
+    "url": "https://pandas.pydata.org",
+    "files": ["pandas.svg"],
+    "category": "data science"
+  },
+  {
+    "name": "PostgreSQL",
+    "shortname": "postgresql",
+    "url": "http://www.postgresql.org/",
+    "files": ["postgresql.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Python",
+    "shortname": "python",
+    "url": "https://www.python.org/",
+    "files": ["python.svg"],
+    "category": "data science"
+  },
+  {
+    "name": "React",
+    "shortname": "react",
+    "url": "https://facebook.github.io/react/",
+    "files": ["react.svg"],
+    "category": "frontend"
+  },
+  {
+    "name": "SQL",
+    "shortname": "sql",
+    "url": "https://es.wikipedia.org/wiki/SQL",
+    "files": ["sql.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Scikit-learn",
+    "shortname": "scikit-learn",
+    "url": "https://scikit-learn.org/stable/",
+    "files": ["scikit-learn.svg"],
+    "category": "data science"
+  },
+  {
+    "name": "Swift",
+    "shortname": "swift",
+    "url": "https://developer.apple.com/swift/",
+    "files": ["swift.svg"],
+    "category": "mobile"
+  },
+  {
+    "name": "Symfony",
+    "shortname": "symfony",
+    "url": "https://symfony.com/",
+    "files": ["symfony.svg"],
+    "category": "backend"
+  },
+  {
+    "name": "Tensorflow",
+    "shortname": "tensorflow",
+    "url": "https://www.tensorflow.org",
+    "files": ["tensorflow.svg"],
+    "category": "data science"
+  },
+  {
+    "name": "Vue.js",
+    "shortname": "vue",
+    "url": "http://vuejs.org/",
+    "files": ["vue.svg"],
+    "category": "frontend"
+  }
+]

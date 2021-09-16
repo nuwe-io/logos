@@ -1,7 +1,7 @@
 define({ "api": [
   {
     "type": "post",
-    "url": "v1/auth/login",
+    "url": "/auth/login",
     "title": "Login",
     "description": "<p>Get an accessToken</p>",
     "version": "1.0.0",
@@ -127,7 +127,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "v1/auth/refresh-token",
+    "url": "/auth/refresh-token",
     "title": "Refresh Token",
     "description": "<p>Refresh expired accessToken</p>",
     "version": "1.0.0",
@@ -217,7 +217,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "v1/auth/register",
+    "url": "/auth/register",
     "title": "",
     "description": "<p>Register a new user</p>",
     "version": "1.0.0",

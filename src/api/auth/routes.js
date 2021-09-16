@@ -6,7 +6,7 @@ const { login, register, refresh, sendPasswordReset, passwordReset } = require('
 const router = express.Router()
 
 /**
- * @api {post} v1/auth/register 
+ * @api {post} /auth/register 
  * @apiDescription Register a new user
  * @apiVersion 1.0.0
  * @apiName Register
@@ -35,7 +35,7 @@ const router = express.Router()
 router.route('/register').post(validate(register), controller.register)
 
 /**
- * @api {post} v1/auth/login Login
+ * @api {post} /auth/login Login
  * @apiDescription Get an accessToken
  * @apiVersion 1.0.0
  * @apiName Login
@@ -64,7 +64,7 @@ router.route('/register').post(validate(register), controller.register)
 router.route('/login').post(validate(login), controller.login)
 
 /**
- * @api {post} v1/auth/refresh-token Refresh Token
+ * @api {post} /auth/refresh-token Refresh Token
  * @apiDescription Refresh expired accessToken
  * @apiVersion 1.0.0
  * @apiName RefreshToken

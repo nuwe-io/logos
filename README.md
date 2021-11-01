@@ -1,5 +1,7 @@
 # NUWE LOGOS API
 
+**DEPRECATED --> CHECK technologies repo**
+
 API que contiene una lista de diferentes tecnologías del sector sofware.
 
 ## Install
